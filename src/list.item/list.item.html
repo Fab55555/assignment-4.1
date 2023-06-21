@@ -1,0 +1,13 @@
+<div>
+  <form [formGroup]="itemForm" (ngSubmit)="addItem()">
+    <input formControlName="newItem" placeholder="New Item">
+    <button type="submit">Add</button>
+  </form>
+</div>
+
+<ul>
+  <li *ngFor="let item of items; let i = index">
+    {{ item }}
+    <button (click)="deleteItem(i)">Delete</button>
+  </li>
+</ul>
